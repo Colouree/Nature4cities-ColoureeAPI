@@ -1,5 +1,8 @@
 # Nature4cities-ColoureeAPI Manual
-Version 1.0
+###### *Version 1.0 
+###### Curly braces in paths indicate a customizable parameter, in this case "path" function as a placehoolder /example/{path}/to/resource*
+
+
 The Api is located at https://apps.colouree.com/n4c/api and also https://app.colouree.com/n4c/api. For the manual we will refer to apps.colouree as main address.
 
 ## 1.0 Resources
@@ -10,21 +13,22 @@ So, the complete url will be https://apps.colouree.com/n4c/api/kpi.json
 
 ## 2.0 Endpoints
 The API has as many endpoints as the kpi it needs to calculate.
-|**Kpi**|**Endpoint**||
+
+|**Kpi**|**Endpoint**|
 |--|--|
-|ugsp|/kpi.json/ugsp|
-|ugsp|/kpi.json/accessibility|
-|ugsp|/kpi.json/areal_sprawl|
-|ugsp|/kpi.json/connectivity|
-|ugsp|/kpi.json/shannon_index|
-|ugsp|/kpi.json/betweenness|
+|Urban Green Space Proportion|/kpi.json/ugsp|
+|Accessibility of Green Spaces|/kpi.json/accessibility|
+|Areal Sprawl|/kpi.json/areal_sprawl|
+|Connectivity of Green Spaces|/kpi.json/connectivity|
+|Shannon Index|/kpi.json/shannon_index|
+|Betweenness|/kpi.json/betweenness|
 
  
 ## 3.0 Parameters
 There are two types of parameters for this API: *path parameters* and *query parameters*.
 ### 3.1 Path Parameters
 #### 3.1.1 Location
-The only path parameter present in the API is the ```location``` parameter, used to specify one of the four pilot cities involved in the N4C Project or if needed a custom location that will need additional contextual data, uploaded by the user in the SUAT.
+The only path parameter present in the API is the ```location``` parameter, used to specify one of the four pilot cities involved in the N4C Project (*Alcala de Henares, Szeged, Milan and Chankaya*) or if needed a custom location that will need additional contextual data, uploaded by the user through the SUAT.
 
 **EXAMPLE: ** ```https://apps.colouree.com/n4c/api/kpi.json/ugsp/{location}```
 

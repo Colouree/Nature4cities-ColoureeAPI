@@ -78,9 +78,11 @@ Geometries passed in any other projection will cause wrong or nonsensical result
 The  **properties** key holds different attributes depending on the real world object they are describing:
 
 The properties needed for a building are
+
+|**height**| number in (m)|
 |--|--|
-|height| number in (m)|
-|building|'yes'|
+|**building**|'yes'|
+
 **EXAMPLE:**
 ```
 "properties": {

@@ -32,13 +32,14 @@ The API has as many endpoints as the kpi it needs to calculate.
 There are two types of parameters for this API: *path parameters* and *query parameters*.
 ### 3.1 Path Parameters
 #### 3.1.1 Location
-The only path parameter present in the API is the ```location``` parameter, used to specify one of the four pilot cities involved in the N4C Project (*Alcala de Henares, Szeged, Milan and Chankaya*) or if needed a custom location that will need additional contextual data, uploaded by the user through the SUAT.
+The only path parameter present in the API is the ```location``` parameter, used to specify one of the four pilot cities involved in the N4C Project (*Alcala de Henares, Szeged, Milan and Chankaya*) or if needed a custom location that will need additional contextual data, uploaded by the user through the SUA, and passed to the API in the ```context``` parameter (3.2.5)
 
 **EXAMPLE:** ```https://apps.colouree.com/n4c/api/kpi.json/ugsp/{location}```
 
 ### 3.2 Query Parameters
+*  1
 
-#### 3.2.1 Assessment
+#### 3.2.1 Assessment (optional)
 This parameter can be passed by the user to specify the type of calculation requested: *before* the implementation of the NBS, *after* the implementation of the NBS or *both* cases: therefore the parameter takes three possible string values:
 *  ```after```
 *  ```before```
@@ -50,7 +51,7 @@ If the **assessment** parameter is not passed, it defaults to ```both```
 
 **IMPORTANT:** if the value of the parameter is either ```after``` or ```both``` the project (3.2.2) parameter is required.
 
-#### 3.2.2 Project
+#### 3.2.2 Project (optional, depending on assessment type)
 This parameter holds the geometric and attribute information about the NBS project to be assessed. Since the possibility to perform a calculation before the implementation of an NBS, this parameter isn't strictly required; it is instead required if if the ```before``` or ```both``` values are passed to ```assessment```
 
 The data structure of the data passed to the **project** parameter must follow the [GeoJSON](https://geojson.org/) specification (RFC 7946). See the complete specification at https://tools.ietf.org/html/rfc7946
@@ -91,22 +92,29 @@ The properties needed for a building are two:
   }
   ```
 The property needed for a green area is just one:**landuse**. It can take different values, depending on the type of kpi. For every kpi except shi (Shannon Index), the value needed is *'green_area'*, while for the Shannon Index the possible values are 
- *  'trees'
- *  'shrubs'
- * 'grass'
+ * 'trees'
+ * 'shrubs'
+ * 'grassland'
  * 'bare turf' (or 'grass')
- * ''
-
+ * 'built'
+ 
 **EXAMPLE:**
 ```
 "properties": {
-    "building": "yes",
-    "height": 33
+    "landuse": 'trees'
   }
   ```
+#### 3.2.3 lon (required)
+This is a simple numerical parameter to store the longitude of the center of the project (in EPSG:4326)
+
+#### 3.2.4 lat (required)
+This is a simple numerical parameter to store the latitude of the center of the project (in EPSG:4326)
+
+#### 3.2.5 (optional, depending on ```location``` 3.1.1)
 
 
-## 4. Request Example
+## 4. Request Examples
+
 
 ## 5. Response Example
 

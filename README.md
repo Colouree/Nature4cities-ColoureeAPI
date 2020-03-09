@@ -7,10 +7,10 @@ The scope of this API is to porvide calculations for a number of *Key Performanc
 ###### Contact: f.silvestri@colouree.com
 
 **Table of Contents**
-[1. Resources](#1.-resources)
+[1. Resources](#resources)
 
 
-## 1. Resources
+## Resources
 The main resource of the API is  ```kpi.json```.
 There is also a resource dedicated to access tokens at ```access_token.json```
 

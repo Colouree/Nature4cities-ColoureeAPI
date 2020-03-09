@@ -2,23 +2,14 @@
 Version 1.0
 The Api is located at https://apps.colouree.com/n4c/ and also https://app.colouree.com/n4c/
 
-## Resources
-The main resource of the API is  
-```diff 
-+api/kpi.json
-```
+## 1.0 Resources
+The main resource of the API is  ```api/kpi.json```
 
 It will respond with a json with this basic structure, depending on the request itself:
 
-```diff
-- text in red
-+ text in green
-! text in orange
-# text in gray
 ```
-```diff
 {   
-    kpi_name: "#requested-kpi",
+    kpi_name: "requested-kpi",
     result: {
           before: {[GEOJSON]},
           after: {[GEOJSON]}
@@ -30,16 +21,17 @@ It will respond with a json with this basic structure, depending on the request 
     
     lat: 40.486748889356605,
     lon: -3.372669271997088,
-    pilot_location: "alcala_de_henares",
-    
+    pilot_location: "pilot-city",
 }
 ```
+This will be discussed in depth in 5.0 Response Example
 
 
-## Endpoints
+## 2.0 Endpoints
+The API has as many endpoints as the kpi it needs to calculate. S
 
-## Parameters
+## 3.0 Parameters
 
-## Request Example
+## 4.0 Request Example
 
-## Response Example
+## 5.0 Response Example

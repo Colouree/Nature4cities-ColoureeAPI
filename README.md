@@ -7,8 +7,20 @@ The scope of this API is to porvide calculations for a number of *Key Performanc
 ###### Contact: f.silvestri@colouree.com
 
 **Table of Contents**
-[1. Resources](#resources)
-
+*   [1. Resources](#resources)
+*   [2. Authentication](#authentication)
+*   [3. Endpoints](#endpoints)
+*   [4. Parameters](#parameters)
+	*   location
+	*   assessment
+	*   project
+	*   lon
+	*   lat
+	*   context
+	*   token
+*   [5. Request Examples](#request-examples)
+*   [6. Response Example](#response-example)
+*   [7. Standards](#standards)
 
 ## Resources
 The main resource of the API is  ```kpi.json```.
@@ -20,7 +32,7 @@ https://apps.colouree.com/n4c/api/kpi.json
 
 and https://apps.colouree.com/n4c/api/access_token.json
 
-## 2. Authentication
+## Authentication
 The API is accessible through token-based authentication: the Token is obtainable at https://apps.colouree.com/n4c, after the registration. The token needs to be passed for every request, as the value of the parameter ```token```
 
 ### 2.1 Endpoints for token management
@@ -38,7 +50,7 @@ since the service needs authentication to be accessed, the user can send a HTTP 
 |PUT|https://app.colouree.com/n4c/api/acces_token.json|creates a new token|
 |DELETE|https://app.colouree.com/n4c/api/acces_token.json/{your-token}|deletes token|
 
-## 3. Endpoints
+## Endpoints
 The API has as many endpoints as the kpi it needs to calculate.
 
 |**Kpi**|**Endpoint**|
@@ -52,7 +64,7 @@ The Method for all of these is POST.
 |Betweenness|/kpi.json/betweenness|
 
  
-## 4. Parameters
+## Parameters
 There are two types of parameters for this API: *path parameters* and *query parameters*.
 
 ### 4.1 Path Parameters
@@ -76,7 +88,7 @@ If the **assessment** parameter is not passed, it defaults to ```both```
 
 **IMPORTANT:** if the value of the parameter is either ```after``` or ```both``` the project (4.2.2) parameter is required.
 
-#### 4.2.2 Project (optional, depending on assessment type)
+#### 4.2.2 project (optional, depending on assessment type)
 This parameter holds the geometric and attribute information about the NBS project to be assessed. Since the possibility to perform a calculation before the implementation of an NBS, this parameter isn't strictly required; it is instead required if if the ```before``` or ```both``` values are passed to ```assessment```
 
 The data structure of the data passed to the **project** parameter must follow the [GeoJSON](https://geojson.org/) specification (RFC 7946). See the complete specification at https://tools.ietf.org/html/rfc7946
@@ -146,7 +158,7 @@ This parameters holds the contextual information on which perform the calculatio
 It has the same specifics of the **project** parameter.
 
 
-## 5. Request Examples
+## Request Examples
 Here are some request examples.
 
 ### 5.1 Tokens
@@ -174,7 +186,7 @@ POST https://app.colouree.com/n4c/api/kpi.json/{kpi}/{pilot-location}/?lon=-3.4&
 POST https://app.colouree.com/n4c/api/kpi.json/{kpi}/{*CUSTOM LOCATION*}/?lon=-3.4&lat=46.7?token={your-access-token}&assessment=both&project={*GeoJSON data*}&context={*GeoJSON data*}
 
 
-## 6. Response Example
+## Response Example
 
 ### 6.1 Response template
 
@@ -195,7 +207,7 @@ POST https://app.colouree.com/n4c/api/kpi.json/{kpi}/{*CUSTOM LOCATION*}/?lon=-3
     pilot_location: "pilot-city",
 }
 ```
-## 7. Standards
+## Standards
 A brief list of the standards utilized by the API:
 
 GeoJSON

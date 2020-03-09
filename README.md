@@ -37,15 +37,20 @@ The only path parameter present in the API is the ```location``` parameter, used
 **EXAMPLE:** ```https://apps.colouree.com/n4c/api/kpi.json/ugsp/{location}```
 
 ### 3.2 Query Parameters
+
 #### 3.2.1 Assessment
-**DEFAULT:** *'both'*
 This parameter can be passed by the user to specify the type of calculation requested: *before* the implementation of the NBS, *after* the implementation of the NBS or *both* cases: therefore the parameter takes three possible string values:
 *  ```after```
 *  ```before```
 *  ```both```
 If the ```assessment``` parameter is not passed, it defaults to ```both```
 
-**IMPORTANT:** if the value of the parameter is either ```after``` or ```both``` the project parameters is needed.
+**DEFAULTS TO:** *'both'*
+
+**IMPORTANT:** if the value of the parameter is either ```after``` or ```both``` the project (3.2.2) parameter is required.
+
+#### 3.2.2 Project
+This parameter holds the geometric and attribute information about the NBS project to be assessed. Since the possibility to perform a calculation before the implementation of an NBS, this parameter isn't strictly required; it is instead required if if the ```before``` or ```both``` values are passed to ```assessment```
 
 
 ## 4. Request Example

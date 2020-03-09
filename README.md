@@ -1,7 +1,7 @@
 # Nature4cities-ColoureeAPI Manual
 The Api is located at https://apps.colouree.com/n4c/api and also https://app.colouree.com/n4c/api. For the manual we will refer to apps.colouree as main address.
-###### *Version 1.0*
-###### *Curly braces in paths indicate a customizable parameter, in this case "path" function as a placehoolder /example/{path}/to/resource*
+*Version 1.0*
+*Curly braces in paths indicate a customizable parameter, in this case "path" function as a placehoolder /example/{path}/to/resource*
 ###### Contact: f.silvestri@colouree.com
 
 ## 1.0 Resources

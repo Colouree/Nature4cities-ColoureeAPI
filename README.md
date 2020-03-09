@@ -11,13 +11,6 @@ The scope of this API is to porvide calculations for a number of *Key Performanc
 *   [2. Authentication](#authentication)
 *   [3. Endpoints](#endpoints)
 *   [4. Parameters](#parameters)
-	*   location
-	*   assessment
-	*   project
-	*   lon
-	*   lat
-	*   context
-	*   token
 *   [5. Request Examples](#request-examples)
 *   [6. Response Example](#response-example)
 *   [7. Standards](#standards)

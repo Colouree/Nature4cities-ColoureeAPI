@@ -57,41 +57,44 @@ This parameter holds the geometric and attribute information about the NBS proje
 The data structure of the data passed to the **project** parameter must follow the [GeoJSON](https://geojson.org/) specification (RFC 7946). See the complete specification at https://tools.ietf.org/html/rfc7946
 
 **EXAMPLE**
-```
+```javascript
 {
   "type": "Feature",
   "geometry": {
-    "type": "Point",
-    "coordinates": [125.6, 10.1]
+    "type": "Polygon",
+    "coordinates": [...]
   },
   "properties": {
     "name": "bench"
   }
 }
 ```
+***
 The **geometry** key holds purely geometric information, represented in [EPSG:4326](https://spatialreference.org/ref/epsg/wgs-84/) projection as per the GeoJSON specification:
 
 Latitude Bounds [-90.0000, 90.0000]
 Longitude Bounds [-180.0000, 180.0000]
 
 Geometries passed in any other projection will cause wrong or nonsensical results for the calculations.
-
+***
 The  **properties** key holds different attributes depending on the real world object they are describing:
 
-The properties needed for a building are two:
+The properties needed for a **building** are two:
 |||
 |--:|:--|
 |**height**| number in (m)|
 |**building**|'yes'|
 
+
 **EXAMPLE:**
-```
+```javascript
 "properties": {
     "building": "yes",
     "height": 33
   }
   ```
-The property needed for a green area is just one:**landuse**. It can take different values, depending on the type of kpi. For every kpi except shi (Shannon Index), the value needed is *'green_area'*, while for the Shannon Index the possible values are 
+***
+The property needed for a **green area** is just one:**landuse**. It can take different values, depending on the type of kpi. For every kpi except shi (Shannon Index), the value needed is *'green_area'*, while for the Shannon Index the possible values are 
  * 'trees'
  * 'shrubs'
  * 'grassland'
@@ -99,7 +102,7 @@ The property needed for a green area is just one:**landuse**. It can take differ
  * 'built'
  
 **EXAMPLE:**
-```
+```javascript
 "properties": {
     "landuse": 'trees'
   }
@@ -110,7 +113,10 @@ This is a simple numerical parameter to store the longitude of the center of the
 #### 3.2.4 lat (required)
 This is a simple numerical parameter to store the latitude of the center of the project (in EPSG:4326)
 
-#### 3.2.5 (optional, depending on ```location``` 3.1.1)
+#### 3.2.5 context(optional, depending on ```location``` 3.1.1)
+This parameters holds the contextual information on which perform the calculation when a ```location``` different from the supported pilot cities is provided.
+It has the same specifics of the **project** parameter.
+
 
 
 ## 4. Request Examples
@@ -120,7 +126,7 @@ This is a simple numerical parameter to store the latitude of the center of the 
 
 It will respond with a json with this basic structure, depending on the request itself:
 
-```
+```javascript
 {   
     kpi_name: "requested-kpi",
     result: {

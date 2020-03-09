@@ -145,31 +145,45 @@ It has the same specifics of the **project** parameter.
 ## 5. Request Examples
 Here are some request examples.
 
-**Token creation:**
+### 5.1 Tokens
+
+**Token creation**
 PUT https://apps.colouree.com/n4c/api/access_token.json
 
-**Token creation:**
-PUT https://apps.colouree.com/n4c/api/access_token.json
+**Token list:**
+GET https://apps.colouree.com/n4c/api/access_token.json
 
-**Kpi operations template**
+**Token deletion:**
+DELETE https://apps.colouree.com/n4c/api/access_token.json/{your-token-here}
+
+### 5.2 Kpi operations
+
+**Kpi calculation before NBS implementation**
 POST https://app.colouree.com/n4c/api/kpi.json/{kpi}/{pilot-location}/?lon=-3.4&lat=46.7?token={your-access-token}&assessment=before
 
+**Note:** the ```project``` parameter does not need to be passed, since the ```assessment``` value is set to *before*
+
+**Kpi calculation before and after NBS implementation**
+POST https://app.colouree.com/n4c/api/kpi.json/{kpi}/{pilot-location}/?lon=-3.4&lat=46.7?token={your-access-token}&assessment=both&project={*GeoJSON data*}
+
+**Kpi calculation not on a pilot location**
+POST https://app.colouree.com/n4c/api/kpi.json/{kpi}/{*CUSTOM LOCATION*}/?lon=-3.4&lat=46.7?token={your-access-token}&assessment=both&project={*GeoJSON data*}&context={*GeoJSON data*}
 
 
 ## 6. Response Example
 
-It will respond with a json with this basic structure, depending on the request itself:
+### 6.1 Response template
 
 ```javascript
 {   
     kpi_name: "requested-kpi",
     result: {
-          before: {[GEOJSON]},
-          after: {[GEOJSON]}
+          before: {GeoJSON},
+          after: {GeoJSON}
     },
     context_geom: {
-          before: {[GEOJSON]},
-          after: {[GEOJSON]}
+          before: {GeoJSON},
+          after: {GeoJSON}
     },
     
     lat: 40.486748889356605,
@@ -177,4 +191,9 @@ It will respond with a json with this basic structure, depending on the request 
     pilot_location: "pilot-city",
 }
 ```
-This will be discussed in depth in 5.0 Response Example
+## 7. Standards
+A brief list of the standards utilized by the API:
+
+GeoJSON
+EPSG:4326
+

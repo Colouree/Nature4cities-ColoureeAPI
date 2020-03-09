@@ -3,9 +3,6 @@ The Api is located at https://apps.colouree.com/n4c/api and also https://app.col
 
 The scope of this API is to porvide calculations for a number of *Key Performance Indicators* (**KPI**) used to measure the implementation of Nature Based Solutions (**NBS**).
 
-
-*Version 1.0*
-
 *Curly braces in paths indicate a customizable parameter, in this case "path" function as a placehoolder /example/{path}/to/resource*
 ###### Contact: f.silvestri@colouree.com
 
@@ -37,7 +34,6 @@ The only path parameter present in the API is the ```location``` parameter, used
 **EXAMPLE:** ```https://apps.colouree.com/n4c/api/kpi.json/ugsp/{location}```
 
 ### 3.2 Query Parameters
-*  1
 
 #### 3.2.1 Assessment (optional)
 This parameter can be passed by the user to specify the type of calculation requested: *before* the implementation of the NBS, *after* the implementation of the NBS or *both* cases: therefore the parameter takes three possible string values:
@@ -118,8 +114,10 @@ This parameters holds the contextual information on which perform the calculatio
 It has the same specifics of the **project** parameter.
 
 
-
 ## 4. Request Examples
+Here are some request examples.
+
+
 
 
 ## 5. Response Example

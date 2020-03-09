@@ -43,7 +43,8 @@ This parameter can be passed by the user to specify the type of calculation requ
 *  ```after```
 *  ```before```
 *  ```both```
-If the ```assessment``` parameter is not passed, it defaults to ```both```
+
+If the **assessment** parameter is not passed, it defaults to ```both```
 
 **DEFAULTS TO:** *'both'*
 
@@ -51,6 +52,43 @@ If the ```assessment``` parameter is not passed, it defaults to ```both```
 
 #### 3.2.2 Project
 This parameter holds the geometric and attribute information about the NBS project to be assessed. Since the possibility to perform a calculation before the implementation of an NBS, this parameter isn't strictly required; it is instead required if if the ```before``` or ```both``` values are passed to ```assessment```
+
+The data structure of the data passed to the **project** parameter must follow the [GeoJSON](https://geojson.org/) specification (RFC 7946). See the complete specification at https://tools.ietf.org/html/rfc7946
+
+**EXAMPLE**
+```
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [125.6, 10.1]
+  },
+  "properties": {
+    "name": "bench"
+  }
+}
+```
+The **geometry** key holds purely geometric information, represented in [EPSG:4326](https://spatialreference.org/ref/epsg/wgs-84/) projection as per the GeoJSON specification:
+
+Latitude Bounds [-90.0000, 90.0000]
+Longitude Bounds [-180.0000, 180.0000]
+
+Geometries passed in any other projection will cause wrong or nonsensical results for the calculations.
+
+The  **properties** key holds different attributes depending on the real world object they are describing:
+
+The properties needed for a building are
+|--|--|
+|height| number in (m)|
+|building|'yes'|
+**EXAMPLE:**
+```
+"properties": {
+    "building": "yes",
+    "height": 33
+  }
+  ```
+
 
 
 ## 4. Request Example

@@ -195,5 +195,6 @@ POST https://app.colouree.com/n4c/api/kpi.json/{kpi}/{*CUSTOM LOCATION*}/?lon=-3
 A brief list of the standards utilized by the API:
 
 GeoJSON
+
 EPSG:4326
 

@@ -20,14 +20,17 @@ The scope of this API is to porvide calculations for a number of *Key Performanc
 *   [Szeged](https://gist.github.com/Colouree/10058124248ea30d677a48d6196b74fd)
 
 ## Resources
-The main resource of the API is  ```kpi.json```.
-There is also a resource dedicated to access tokens at ```access_token.json```
+There are two resources in this API:
+ *   ```/kpi.json``` related to indicator calculations
+*    ```/access_token.json``` to manage tokens
 
 Complete paths will be in the form of 
 
 https://apps.colouree.com/n4c/api/kpi.json
 
-and https://apps.colouree.com/n4c/api/access_token.json
+and 
+
+https://apps.colouree.com/n4c/api/access_token.json
 
 ## Authentication
 The API is accessible through token-based authentication: the Token is obtainable at https://apps.colouree.com/n4c, after the registration. The token needs to be passed for every request, as the value of the parameter ```token```

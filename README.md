@@ -100,8 +100,10 @@ Geometries passed in any other projection will cause wrong or nonsensical result
 
 The  **properties** key holds different attributes depending on the real world object they are describing:
 
-*  BUILDING PROPERTIES
+<ins>BUILDING PROPERTIES</ins>
+
 The properties needed for a **building** are two:
+
 |||
 |--:|:--|
 |**height**| number in (m)|
@@ -116,8 +118,13 @@ The properties needed for a **building** are two:
   }
   ```
 ***
-*  GREEN AREAS PROPERTIES
-The property needed for a **green area** is just one:**landuse**. It can take different values, depending on the type of kpi. For every kpi except shi (Shannon Index), the value needed is *'green_area'*, while for the Shannon Index the possible values are 
+<ins>GREEN AREAS PROPERTIES</ins>
+The property needed for a **green area** is just one:**landuse**. It can take different values, depending on the type of kpi. For every kpi except shi (Shannon Index), the value needed is 
+
+ *  'green_area' 
+ 
+ while for the Shannon Index the possible values are 
+ 
  * 'trees'
  * 'shrubs'
  * 'grassland'

@@ -101,6 +101,8 @@ The data structure of the data passed to the **project** parameter must follow t
 }
 ```
 ***
+##### GEOMETRY
+
 The **geometry** key holds purely geometric information, represented in [EPSG:4326](https://spatialreference.org/ref/epsg/wgs-84/) projection as per the GeoJSON specification:
 
 Latitude Bounds [-90.0000, 90.0000]
@@ -108,8 +110,11 @@ Longitude Bounds [-180.0000, 180.0000]
 
 Geometries passed in any other projection will cause wrong or nonsensical results for the calculations.
 ***
+##### PROPERTIES
+
 The  **properties** key holds different attributes depending on the real world object they are describing:
 
+###### BUILDING PROPERTIES
 The properties needed for a **building** are two:
 |||
 |--:|:--|
@@ -125,6 +130,7 @@ The properties needed for a **building** are two:
   }
   ```
 ***
+###### GREEN AREAS PROPERTIES
 The property needed for a **green area** is just one:**landuse**. It can take different values, depending on the type of kpi. For every kpi except shi (Shannon Index), the value needed is *'green_area'*, while for the Shannon Index the possible values are 
  * 'trees'
  * 'shrubs'
@@ -139,9 +145,11 @@ The property needed for a **green area** is just one:**landuse**. It can take di
   }
   ```
 ***
-**COMPLETE EXAMPLE OF A VALID ```project``` PARAMETER**
+##### **COMPLETE EXAMPLE OF A VALID ```project``` PARAMETER**
+[Colouree/project.geojson](https://gist.github.com/Colouree/4921f275929a0777829b61b741b79542)
 
-<script src="https://gist.github.com/Colouree/4921f275929a0777829b61b741b79542.js"></script>
+***
+
 
 This example contains three geometries, of which two are green areas and one is a building.
 

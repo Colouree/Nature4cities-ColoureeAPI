@@ -15,6 +15,10 @@ The scope of this API is to porvide calculations for a number of *Key Performanc
 *   [6. Response Example](#response-example)
 *   [7. Standards](#standards)
 
+**[Gists](https://gist.github.com/Colouree)**
+*   [Alcala](https://gist.github.com/Colouree/4921f275929a0777829b61b741b79542)
+*   [Szeged](https://gist.github.com/Colouree/10058124248ea30d677a48d6196b74fd)
+
 ## Resources
 The main resource of the API is  ```kpi.json```.
 There is also a resource dedicated to access tokens at ```access_token.json```

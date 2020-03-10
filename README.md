@@ -48,7 +48,6 @@ since the service needs authentication to be accessed, the user can send a HTTP 
 The API has as many endpoints as the kpi it needs to calculate.
 
 |**Kpi**|**Endpoint**|
-The Method for all of these is POST.
 |--|--|
 |Urban Green Space Proportion|/kpi.json/ugsp|
 |Accessibility of Green Spaces|/kpi.json/accessibility|
@@ -56,6 +55,8 @@ The Method for all of these is POST.
 |Connectivity of Green Spaces|/kpi.json/connectivity|
 |Shannon Index|/kpi.json/shannon_index|
 |Betweenness|/kpi.json/betweenness|
+
+The Method for all of these is POST.
 
  
 ## Parameters
@@ -66,7 +67,7 @@ There are two types of parameters for this API: *path parameters* and *query par
 #### 4.1.1 Location
 The only path parameter present in the API is the ```location``` parameter, used to specify one of the four pilot cities involved in the N4C Project (*Alcala de Henares, Szeged, Milan and Chankaya*) or if needed a custom location that will need additional contextual data, uploaded by the user through the SUA, and passed to the API in the ```context``` parameter (4.2.5)
 
-**EXAMPLE:** ```https://apps.colouree.com/n4c/api/kpi.json/ugsp/{location}```
+* **example:** ```https://apps.colouree.com/n4c/api/kpi.json/ugsp/{location}```
 
 ### 4.2 Query Parameters
 
@@ -78,28 +79,13 @@ This parameter can be passed by the user to specify the type of calculation requ
 
 If the **assessment** parameter is not passed, it defaults to ```both```
 
-**DEFAULTS TO:** *'both'*
-
-**IMPORTANT:** if the value of the parameter is either ```after``` or ```both``` the project (4.2.2) parameter is required.
+*   defaults to: *'both'*
+*  important: if the value of the parameter is either ```after``` or ```both``` the project (4.2.2) parameter is required.
 
 #### 4.2.2 project (optional, depending on assessment type)
 This parameter holds the geometric and attribute information about the NBS project to be assessed. Since the possibility to perform a calculation before the implementation of an NBS, this parameter isn't strictly required; it is instead required if if the ```before``` or ```both``` values are passed to ```assessment```
 
 The data structure of the data passed to the **project** parameter must follow the [GeoJSON](https://geojson.org/) specification (RFC 7946). See the complete specification at https://tools.ietf.org/html/rfc7946
-
-**EXAMPLE**
-```javascript
-{
-  "type": "Feature",
-  "geometry": {
-    "type": "Polygon",
-    "coordinates": [...]
-  },
-  "properties": {
-    "name": "bench"
-  }
-}
-```
 ***
 ##### GEOMETRY
 
@@ -114,7 +100,7 @@ Geometries passed in any other projection will cause wrong or nonsensical result
 
 The  **properties** key holds different attributes depending on the real world object they are describing:
 
-###### BUILDING PROPERTIES
+*  BUILDING PROPERTIES
 The properties needed for a **building** are two:
 |||
 |--:|:--|
@@ -122,7 +108,7 @@ The properties needed for a **building** are two:
 |**building**|'yes'|
 
 
-**EXAMPLE:**
+* **example:**
 ```javascript
 "properties": {
     "building": "yes",
@@ -130,7 +116,7 @@ The properties needed for a **building** are two:
   }
   ```
 ***
-###### GREEN AREAS PROPERTIES
+*  GREEN AREAS PROPERTIES
 The property needed for a **green area** is just one:**landuse**. It can take different values, depending on the type of kpi. For every kpi except shi (Shannon Index), the value needed is *'green_area'*, while for the Shannon Index the possible values are 
  * 'trees'
  * 'shrubs'
@@ -138,20 +124,19 @@ The property needed for a **green area** is just one:**landuse**. It can take di
  * 'bare turf' (or 'grass')
  * 'built'
  
-**EXAMPLE:**
+*  **example:**
 ```javascript
 "properties": {
     "landuse": 'trees'
   }
   ```
 ***
-##### **COMPLETE EXAMPLE OF A VALID ```project``` PARAMETER**
+##### **EXAMPLE OF A VALID ```project``` PARAMETER**
+The example contains three geometries, of which two are green areas and one is a building.
+
 [Colouree/project.geojson](https://gist.github.com/Colouree/4921f275929a0777829b61b741b79542)
 
 ***
-
-
-This example contains three geometries, of which two are green areas and one is a building.
 
 #### 4.2.3 lon (required)
 This is a simple numerical parameter to store the longitude of the center of the project (in EPSG:4326)

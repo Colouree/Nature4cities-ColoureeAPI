@@ -143,6 +143,8 @@ The example contains three geometries, of which two are green areas and one is a
 
 [Colouree/project.geojson](https://gist.github.com/Colouree/4921f275929a0777829b61b741b79542)
 
+Go to our gist page https://gist.github.com/Colouree to see other examples.
+
 ***
 
 #### 4.2.3 lon (required)

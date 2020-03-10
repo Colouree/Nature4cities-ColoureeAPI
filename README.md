@@ -138,6 +138,150 @@ The property needed for a **green area** is just one:**landuse**. It can take di
     "landuse": 'trees'
   }
   ```
+***
+**COMPLETE EXAMPLE OF A VALID ```project``` PARAMETER**
+
+```
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "landuse": "green_area"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.369799,
+              40.481842
+            ],
+            [
+              -3.369874,
+              40.481801
+            ],
+            [
+              -3.371311,
+              40.481026
+            ],
+            [
+              -3.372084,
+              40.480765
+            ],
+            [
+              -3.372105,
+              40.480896
+            ],
+            [
+              -3.371462,
+              40.48123
+            ],
+            [
+              -3.37115,
+              40.481654
+            ],
+            [
+              -3.369876,
+              40.482158
+            ],
+            [
+              -3.369863,
+              40.482075
+            ],
+            [
+              -3.36989,
+              40.482038
+            ],
+            [
+              -3.369799,
+              40.481842
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "landuse": "green_area"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.369251,
+              40.482109
+            ],
+            [
+              -3.369281,
+              40.481975
+            ],
+            [
+              -3.369673,
+              40.481844
+            ],
+            [
+              -3.369675,
+              40.481895
+            ],
+            [
+              -3.369466,
+              40.481975
+            ],
+            [
+              -3.369474,
+              40.482018
+            ],
+            [
+              -3.369251,
+              40.482109
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "building": "yes",
+        "height": 3
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.369788,
+              40.481842
+            ],
+            [
+              -3.369681,
+              40.481844
+            ],
+            [
+              -3.369673,
+              40.481897
+            ],
+            [
+              -3.369831,
+              40.481901
+            ],
+            [
+              -3.369788,
+              40.481842
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
+```
+This example contains three geometries, of which two are green areas and one is a building.
+
 #### 4.2.3 lon (required)
 This is a simple numerical parameter to store the longitude of the center of the project (in EPSG:4326)
 

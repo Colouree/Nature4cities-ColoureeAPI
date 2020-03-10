@@ -37,11 +37,12 @@ since the service needs authentication to be accessed, the user can send a HTTP 
 	Authorization: Basic QwxhZGRpbjpvcGVuIHNlc2FtZQ==
  ```
  
-|METHOD|ENDPOINT|RESPONSE
+|METHOD|ENDPOINT|RESPONSE|
 |--|--|--|
 |GET|https://app.colouree.com/n4c/api/acces_token.json|list of active tokens|
 |PUT|https://app.colouree.com/n4c/api/acces_token.json|creates a new token|
 |DELETE|https://app.colouree.com/n4c/api/acces_token.json/{your-token}|deletes token|
+
 
 ## Endpoints
 The API has as many endpoints as the kpi it needs to calculate.

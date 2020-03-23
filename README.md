@@ -185,15 +185,15 @@ DELETE https://apps.colouree.com/n4c/api/access_token.json/{your-token-here}
 ### 5.2 Kpi operations
 
 **Kpi calculation before NBS implementation**
-POST https://app.colouree.com/n4c/api/kpi.json/{kpi}/{pilot-location}/?lon=-3.4&lat=46.7?token={your-access-token}&assessment=before
+POST https://app.colouree.com/n4c/api/kpi.json/{kpi}/{pilot-location}/?lon=-3.4&lat=46.7&token={your-access-token}&assessment=before
 
 **Note:** the ```project``` parameter does not need to be passed, since the ```assessment``` value is set to *before*
 
 **Kpi calculation before and after NBS implementation**
-POST https://app.colouree.com/n4c/api/kpi.json/{kpi}/{pilot-location}/?lon=-3.4&lat=46.7?token={your-access-token}&assessment=both&project={*GeoJSON data*}
+POST https://app.colouree.com/n4c/api/kpi.json/{kpi}/{pilot-location}/?lon=-3.4&lat=46.7&token={your-access-token}&assessment=both&project={*GeoJSON data*}
 
 **Kpi calculation not on a pilot location**
-POST https://app.colouree.com/n4c/api/kpi.json/{kpi}/{*CUSTOM LOCATION*}/?lon=-3.4&lat=46.7?token={your-access-token}&assessment=both&project={*GeoJSON data*}&context={*GeoJSON data*}
+POST https://app.colouree.com/n4c/api/kpi.json/{kpi}/{*CUSTOM LOCATION*}/?lon=-3.4&lat=46.7&token={your-access-token}&assessment=both&project={*GeoJSON data*}&context={*GeoJSON data*}
 
 
 ## Response Example

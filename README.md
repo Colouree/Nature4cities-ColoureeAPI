@@ -72,7 +72,14 @@ There are two types of parameters for this API: *path parameters* and *query par
 ### 4.1 Path Parameters
 
 #### 4.1.1 Location
-The only path parameter present in the API is the ```location``` parameter, used to specify one of the four pilot cities involved in the N4C Project (*Alcala de Henares, Szeged, Milan and Chankaya*) or if needed a custom location that will need additional contextual data, uploaded by the user through the SUA, and passed to the API in the ```context``` parameter (4.2.5)
+The only path parameter present in the API is the ```location``` parameter, used to specify one of the four pilot cities involved in the N4C Project (*Alcala de Henares, Szeged, Milan and Ankara*) or if needed a custom location that will need additional contextual data, uploaded by the user through the SUA, and passed to the API in the ```context``` parameter (4.2.5)
+
+|Pilot|Parameter|
+|--|--|
+|Alcala de Henares|alcala_de_henares|
+|Szeged|szeged|
+|Milan|milan|
+|Ankara|ankara|
 
 * **example:** ```https://apps.colouree.com/n4c/api/kpi.json/ugsp/{location}```
 
